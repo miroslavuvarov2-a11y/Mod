@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "swamp",
+    "mangrove_swamp"
+  ],
+  "spawners": {
+    "type": "themutantmobsmod:mutant_bogged",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

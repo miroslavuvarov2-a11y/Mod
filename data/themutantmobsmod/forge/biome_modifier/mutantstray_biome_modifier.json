@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "snowy_plains",
+    "plains",
+    "snowy_taiga"
+  ],
+  "spawners": {
+    "type": "themutantmobsmod:mutantstray",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

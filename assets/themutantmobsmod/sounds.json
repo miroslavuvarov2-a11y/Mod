@@ -1,0 +1,394 @@
+{
+  "siren": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:wo",
+        "stream": false
+      }
+    ]
+  },
+  "st": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:step2",
+        "stream": false
+      }
+    ]
+  },
+  "wo": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:wo",
+        "stream": false
+      }
+    ]
+  },
+  "hur": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:trevor-henderson-vs-creepypasta-minecraft-animation-_2_",
+        "stream": false
+      }
+    ]
+  },
+  "hur2": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:mega-horn-vs-siren-heads-house-head-living-building",
+        "stream": false
+      }
+    ]
+  },
+  "at": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:huggy-wuggy-jumpscaresound-effect",
+        "stream": false
+      }
+    ]
+  },
+  "c": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:poppy-playtime-chapter-1-ost-huggy-wuggy-full-chase-theme-3-ost-combined",
+        "stream": false
+      }
+    ]
+  },
+  "chase": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:chase_poppy",
+        "stream": false
+      }
+    ]
+  },
+  "fg6u": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:poppy-playtime-mommy-long-legs-jumpscare",
+        "stream": false
+      }
+    ]
+  },
+  "mda1": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:ambient2",
+        "stream": false
+      }
+    ]
+  },
+  "mda": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:attack",
+        "stream": false
+      }
+    ]
+  },
+  "mdh": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:hurt1",
+        "stream": false
+      }
+    ]
+  },
+  "mhh": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:grunt",
+        "stream": false
+      }
+    ]
+  },
+  "mhr": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:roar4",
+        "stream": false
+      }
+    ]
+  },
+  "mhe": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:idle2",
+        "stream": false
+      }
+    ]
+  },
+  "mha": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:attack",
+        "stream": false
+      }
+    ]
+  },
+  "mzvs": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:scream7",
+        "stream": false
+      }
+    ]
+  },
+  "dad": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:attack1",
+        "stream": false
+      }
+    ]
+  },
+  "tt": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:sfx_mob_rsmonstrosityshoot-002_soundwave",
+        "stream": false
+      }
+    ]
+  },
+  "mst": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:evoker",
+        "stream": false
+      }
+    ]
+  },
+  "mwt": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:ancient-guardian",
+        "stream": false
+      }
+    ]
+  },
+  "enchase": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:evil-nuns-chase-full-ost",
+        "stream": false
+      }
+    ]
+  },
+  "ga": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:evil-nun-vs-evil-nun-the-broken-mask-jumpscare",
+        "stream": false
+      }
+    ]
+  },
+  "mmgg": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:main-menu-music",
+        "stream": false
+      }
+    ]
+  },
+  "kkk": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:evil-nun-vs-evil-nun-the-broken-mask-jumpscare",
+        "stream": false
+      }
+    ]
+  },
+  "ghd": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:psychopath-hunt-chapter-two-chase-music",
+        "stream": false
+      }
+    ]
+  },
+  "gu": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:rod-sullivan-launched-ice-scream-8-during-the-bilbao-international-games-conferences",
+        "stream": false
+      }
+    ]
+  },
+  "medh": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:scream8",
+        "stream": false
+      }
+    ]
+  },
+  "klj": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:vengeful-heart-of-ender-combination-remix-improved-version",
+        "stream": false
+      }
+    ]
+  },
+  "lpl": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:ksg",
+        "stream": false
+      }
+    ]
+  },
+  "gh": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:my_projecth",
+        "stream": false
+      }
+    ]
+  },
+  "ii": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:my-projecth",
+        "stream": false
+      }
+    ]
+  },
+  "mgbt": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:my-projectmgbt2",
+        "stream": false
+      }
+    ]
+  },
+  "mgs2": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:the-nun-game-over-5-day",
+        "stream": false
+      }
+    ]
+  },
+  "ggilgtm": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:arena1",
+        "stream": false
+      }
+    ]
+  },
+  "mwbbt": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:mwbbt",
+        "stream": false
+      }
+    ]
+  },
+  "sw1": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:sword-sound-effects-for-editing",
+        "stream": false
+      }
+    ]
+  },
+  "soul": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:grim-reaper-consume-soul-sound-effect",
+        "stream": false
+      }
+    ]
+  },
+  "expl": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:explosion-sound-effects",
+        "stream": false
+      }
+    ]
+  },
+  "sw2": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:soul_sword_swing_nomal_5",
+        "stream": false
+      }
+    ]
+  },
+  "so1": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:so1",
+        "stream": false
+      }
+    ]
+  },
+  "so2": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:so2",
+        "stream": false
+      }
+    ]
+  },
+  "sefe2": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:sound-effect-for-editing-_2_",
+        "stream": false
+      }
+    ]
+  },
+  "mbshot": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:shotgun",
+        "stream": false
+      }
+    ]
+  },
+  "mbtb": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:lmpc",
+        "stream": false
+      }
+    ]
+  },
+  "ssse": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:ssse",
+        "stream": false
+      }
+    ]
+  },
+  "unbbt": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:unbbt",
+        "stream": false
+      }
+    ]
+  },
+  "bfd": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:bfd",
+        "stream": false
+      }
+    ]
+  },
+  "tqm": {
+    "sounds": [
+      {
+        "name": "themutantmobsmod:tqm",
+        "stream": false
+      }
+    ]
+  }
+}

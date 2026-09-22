@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"i": {
+			"loop": true,
+			"animation_length": 0.375
+		},
+		"a": {
+			"animation_length": 0.375,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"0.0": {
+							"vector": [-122.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [2.5, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

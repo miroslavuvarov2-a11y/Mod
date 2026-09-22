@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:diamond_block"
+    },
+    "1": {
+      "item": "minecraft:netherite_sword"
+    },
+    "2": {
+      "item": "minecraft:diamond_block"
+    },
+    "3": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "4": {
+      "item": "minecraft:redstone_torch"
+    },
+    "5": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "6": {
+      "item": "minecraft:soul_sand"
+    },
+    "7": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "8": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "item": "themutantmobsmod:mutant_warden_spawn_egg",
+    "count": 1
+  }
+}

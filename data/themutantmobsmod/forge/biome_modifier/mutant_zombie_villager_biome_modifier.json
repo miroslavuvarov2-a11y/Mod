@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "forest",
+    "plains",
+    "savanna",
+    "jungle",
+    "desert"
+  ],
+  "spawners": {
+    "type": "themutantmobsmod:mutant_zombie_villager",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

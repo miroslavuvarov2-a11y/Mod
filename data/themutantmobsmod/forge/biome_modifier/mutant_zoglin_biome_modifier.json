@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "nether_wastes",
+  "spawners": {
+    "type": "themutantmobsmod:mutant_zoglin",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,81 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.shscp",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 4, 0]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "bone",
+					"pivot": [2, 30, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [1, 0, -1], "size": [2, 30, 2], "uv": [56, 0]}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "bone",
+					"pivot": [-2, 30, 0],
+					"cubes": [
+						{"origin": [-3, 0, -1], "size": [2, 30, 2], "uv": [56, 0]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone",
+					"pivot": [0, 30, 0]
+				},
+				{
+					"name": "Head",
+					"parent": "bone2",
+					"pivot": [0, 28, 0],
+					"cubes": [
+						{"origin": [-4, 42, -4], "size": [8, 8, 8], "inflate": -0.5, "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "Body",
+					"parent": "bone2",
+					"pivot": [0, 42, 0],
+					"cubes": [
+						{"origin": [-4, 30, -2], "size": [8, 12, 4], "uv": [32, 16]}
+					]
+				},
+				{
+					"name": "bone3",
+					"parent": "bone2",
+					"pivot": [5, 41, 0]
+				},
+				{
+					"name": "RightArm",
+					"parent": "bone3",
+					"pivot": [-3, 40, 0],
+					"cubes": [
+						{"origin": [-6, 12, -1], "size": [2, 30, 2], "uv": [56, 0]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "bone3",
+					"pivot": [5, 40, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [4, 12, -1], "size": [2, 30, 2], "uv": [56, 0]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "themutantmobsmod:custom/m1014",
+  "textures": {
+    "0": "themutantmobsmod:block/m1014",
+    "particle": "themutantmobsmod:item/m1014"
+  }
+}
