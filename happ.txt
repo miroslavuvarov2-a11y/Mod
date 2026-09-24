@@ -1,38 +1,28 @@
 [
   {
-    "remarks": "🇵🇱 KrabirVPN | VLESS Vision",
+    "remarks": "🇵🇱 KrabirVPN | YouTube",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {"auth": "noauth", "udp": true},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "http"
-      }
-    ],
     "outbounds": [
       {
         "tag": "proxy",
         "protocol": "vless",
         "settings": {
-          "vnext": [{
-            "address": "31.76.22.245",
-            "port": 8443,
-            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": "xtls-rprx-vision"}]
-          }]
+          "vnext": [
+            {
+              "address": "31.76.22.245",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
         },
         "streamSettings": {
           "network": "tcp",
@@ -45,30 +35,32 @@
           }
         }
       },
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      }
     ],
     "routing": {
       "domainStrategy": "IPIfNonMatch",
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+      "rules": [
+        {
+          "type": "field",
+          "protocol": ["bittorrent"],
+          "outboundTag": "direct"
+        }
+      ]
     }
   },
   {
-    "remarks": "🇩🇪 KrabirVPN | Hysteria 2",
+    "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {"auth": "noauth", "udp": true},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "socks"
-      }
-    ],
     "outbounds": [
       {
         "tag": "proxy",
@@ -91,41 +83,33 @@
             "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc"
           }
         }
-      },
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
-    }
+      }
+    ]
   },
   {
-    "remarks": "🇩🇪 KrabirVPN | VLESS Vision",
+    "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {"auth": "noauth", "udp": true},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "socks"
-      }
-    ],
     "outbounds": [
       {
         "tag": "proxy",
         "protocol": "vless",
         "settings": {
-          "vnext": [{
-            "address": "45.88.12.92",
-            "port": 8443,
-            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": "xtls-rprx-vision"}]
-          }]
+          "vnext": [
+            {
+              "address": "45.88.12.92",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
         },
         "streamSettings": {
           "network": "tcp",
@@ -137,41 +121,33 @@
             "shortId": "df130cd835587313"
           }
         }
-      },
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
-    }
+      }
+    ]
   },
   {
-    "remarks": "🇳🇱 KrabirVPN | VLESS TCP REALITY",
+    "remarks": "🇳🇱 KrabirVPN | Brawl Stars",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {"auth": "noauth", "udp": true},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "socks"
-      }
-    ],
     "outbounds": [
       {
         "tag": "proxy",
         "protocol": "vless",
         "settings": {
-          "vnext": [{
-            "address": "eu86.vaultberry.cloud",
-            "port": 443,
-            "users": [{"id": "ad80695b-5b09-4025-abae-d90c23a4f734", "encryption": "none", "flow": ""}]
-          }]
+          "vnext": [
+            {
+              "address": "eu86.vaultberry.cloud",
+              "port": 443,
+              "users": [
+                {
+                  "id": "ad80695b-5b09-4025-abae-d90c23a4f734",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
         },
         "streamSettings": {
           "network": "tcp",
@@ -183,41 +159,33 @@
             "shortId": "1ed136481e0ede74"
           }
         }
-      },
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
-    }
+      }
+    ]
   },
   {
-    "remarks": "🇧🇾 KrabirVPN | VLESS WS TLS ⚡️",
+    "remarks": "be KrabirVPN | Alt",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {"auth": "noauth", "udp": true},
-        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
-        "tag": "socks"
-      }
-    ],
     "outbounds": [
       {
         "tag": "proxy",
         "protocol": "vless",
         "settings": {
-          "vnext": [{
-            "address": "45.88.12.26",
-            "port": 2083,
-            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": ""}]
-          }]
+          "vnext": [
+            {
+              "address": "45.88.12.26",
+              "port": 2083,
+              "users": [
+                {
+                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
         },
         "streamSettings": {
           "network": "ws",
@@ -229,16 +197,12 @@
           },
           "wsSettings": {
             "path": "/vless-ws",
-            "headers": {"Host": "mol.ultimagamest.com"}
+            "headers": {
+              "Host": "mol.ultimagamest.com"
+            }
           }
         }
-      },
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
-    }
+      }
+    ]
   }
 ]
