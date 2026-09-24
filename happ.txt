@@ -291,7 +291,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇧🇾 KrabirVPN | CIS | XHTTP",
+    "remarks": "🇧🇾 KrabirVPN | CIS",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
