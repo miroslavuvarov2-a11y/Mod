@@ -163,7 +163,7 @@
     ]
   },
   {
-    "remarks": "be KrabirVPN | Alt",
+    "remarks": "🇧🇪 KrabirVPN | Alt",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": ["1.1.1.1", "1.0.0.1"]
