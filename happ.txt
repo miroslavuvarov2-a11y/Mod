@@ -1,5 +1,244 @@
-vless://f9db5515-2675-4a22-a71b-b06e6f78a9dc@31.76.22.245:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.amazon.com&fp=chrome&pbk=4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg&sid=df130cd835587313&type=tcp#%F0%9F%87%B5%F0%9F%87%B1%20KrabirVPN%20%7C%20VLESS%20Vision
-hysteria2://f9db5515-2675-4a22-a71b-b06e6f78a9dc@45.88.12.21:443/?sni=mol.ultimagamest.com&alpn=h3&insecure=0#%F0%9F%87%A9%F0%9F%87%AA%20KrabirVPN%20%7C%20Hysteria
-vless://f9db5515-2675-4a22-a71b-b06e6f78a9dc@45.88.12.92:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.amazon.com&fp=chrome&pbk=4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg&sid=df130cd835587313&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%20KrabirVPN%20%7C%20VLESS%20Vision
-vless://ad80695b-5b09-4025-abae-d90c23a4f734@eu86.vaultberry.cloud:443?encryption=none&security=reality&sni=eu86.vaultberry.cloud&fp=firefox&pbk=zYNnGVEkMFCUR_9NcYeaXfm9A_L-PP6iG2sIIST6S0M&sid=1ed136481e0ede74&type=tcp#%F0%9F%87%B3%F0%9F%87%B1%20KrabirVPN%20%7C%20Vless%20TCP%20REALITY
-vless://f9db5515-2675-4a22-a71b-b06e6f78a9dc@45.88.12.26:2083?encryption=none&security=tls&sni=mol.ultimagamest.com&fp=chrome&type=ws&path=%2Fvless-ws&alpn=http%2F1.1#%F0%9F%87%A7%F0%9F%87%AA%20KrabirVPN%20%7C%20VLESS%20WS%20TLS%20%E2%9A%A1%EF%B8%8F
+[
+  {
+    "remarks": "🇵🇱 KrabirVPN | VLESS Vision",
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {"allowTransparent": false},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{
+            "address": "31.76.22.245",
+            "port": 8443,
+            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": "xtls-rprx-vision"}]
+          }]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "chrome",
+            "serverName": "www.amazon.com",
+            "publicKey": "4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg",
+            "shortId": "df130cd835587313"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+    }
+  },
+  {
+    "remarks": "🇩🇪 KrabirVPN | Hysteria 2",
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "hysteria",
+        "settings": {
+          "version": 2,
+          "address": "45.88.12.21",
+          "port": 443
+        },
+        "streamSettings": {
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "mol.ultimagamest.com",
+            "alpn": ["h3"],
+            "allowInsecure": false
+          },
+          "hysteriaSettings": {
+            "version": 2,
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+    }
+  },
+  {
+    "remarks": "🇩🇪 KrabirVPN | VLESS Vision",
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{
+            "address": "45.88.12.92",
+            "port": 8443,
+            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": "xtls-rprx-vision"}]
+          }]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "chrome",
+            "serverName": "www.amazon.com",
+            "publicKey": "4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg",
+            "shortId": "df130cd835587313"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+    }
+  },
+  {
+    "remarks": "🇳🇱 KrabirVPN | VLESS TCP REALITY",
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{
+            "address": "eu86.vaultberry.cloud",
+            "port": 443,
+            "users": [{"id": "ad80695b-5b09-4025-abae-d90c23a4f734", "encryption": "none", "flow": ""}]
+          }]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "serverName": "eu86.vaultberry.cloud",
+            "publicKey": "zYNnGVEkMFCUR_9NcYeaXfm9A_L-PP6iG2sIIST6S0M",
+            "shortId": "1ed136481e0ede74"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+    }
+  },
+  {
+    "remarks": "🇧🇾 KrabirVPN | VLESS WS TLS ⚡️",
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true},
+        "sniffing": {"enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false},
+        "tag": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{
+            "address": "45.88.12.26",
+            "port": 2083,
+            "users": [{"id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc", "encryption": "none", "flow": ""}]
+          }]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "mol.ultimagamest.com",
+            "fingerprint": "chrome",
+            "alpn": ["http/1.1"]
+          },
+          "wsSettings": {
+            "path": "/vless-ws",
+            "headers": {"Host": "mol.ultimagamest.com"}
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}]
+    }
+  }
+]
