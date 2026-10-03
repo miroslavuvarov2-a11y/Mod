@@ -419,7 +419,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇵🇱 DoDoVPN | Запасной | Hysteria",
+    "remarks": "🇵🇱 KrabirVPN | Запасной | Hysteria",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
