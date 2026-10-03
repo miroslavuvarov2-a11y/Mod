@@ -812,5 +812,147 @@
         }
       ]
     }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": true
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "45.139.226.116",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "04IN2DYDcfpWlYcReoK9sCvBZSLPrCqt2SnZMHkVDxs",
+            "serverName": "cdn.brightloom.net",
+            "shortId": "4dfce308f2074197"
+          },
+          "security": "reality"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇸🇬 KrabirVPN | SG | TikTok",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "oneme.ru",
+            "oneme.app",
+            "max.ru"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:googlevideo.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private",
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "avito.st",
+            "domain:kdrop.app",
+            "geosite:category-ru",
+            "regexp:.*\\.ru$",
+            "regexp:.*\\.xn--p1ai$",
+            "regexp:.*\\.xn--p1acf$",
+            "regexp:.*\\.xn--p1ag$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
   }
 ]
