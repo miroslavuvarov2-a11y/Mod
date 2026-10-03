@@ -1,66 +1,5 @@
 [
   {
-    "remarks": "🇵🇱 KrabirVPN | YouTube",
-    "dns": {
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "31.76.22.245",
-              "port": 8443,
-              "users": [
-                {
-                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "fingerprint": "chrome",
-            "serverName": "www.amazon.com",
-            "publicKey": "4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg",
-            "shortId": "df130cd835587313"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      }
-    ],
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "protocol": [
-            "bittorrent"
-          ],
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  },
-  {
     "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
       "queryStrategy": "UseIPv4",
@@ -419,7 +358,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇵🇱 KrabirVPN | Запасной | Hysteria",
+    "remarks": "🇵🇱 KrabirVPN | YouTube",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
