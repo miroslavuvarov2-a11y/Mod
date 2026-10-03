@@ -129,7 +129,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇩🇪  DoDoVPN | VLESS WS TLS ⚡️",
+    "remarks": "🇩🇪 KrabirVPN | Flash",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
