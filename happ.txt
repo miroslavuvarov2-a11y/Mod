@@ -1,3 +1,5 @@
+#profile-title: KrabirVPN
+#profile-update-interval: 1
 [
   {
     "dns": {
