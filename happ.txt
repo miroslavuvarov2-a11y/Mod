@@ -1,39 +1,110 @@
 [
   {
-    "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
-      "queryStrategy": "UseIPv4",
+      "queryStrategy": "UseIP",
       "servers": [
         "1.1.1.1",
         "1.0.0.1"
       ]
     },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
     "outbounds": [
       {
-        "tag": "proxy",
         "protocol": "hysteria",
         "settings": {
-          "version": 2,
-          "address": "45.88.12.21",
-          "port": 443
+          "address": "45.88.12.122",
+          "port": 443,
+          "version": 2
         },
         "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
           "network": "hysteria",
           "security": "tls",
           "tlsSettings": {
-            "serverName": "mol.ultimagamest.com",
             "alpn": [
               "h3"
             ],
-            "allowInsecure": false
-          },
-          "hysteriaSettings": {
-            "version": 2,
-            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc"
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
           }
-        }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
       }
-    ]
+    ],
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    },
+    "remarks": "🇩🇪 KrabirVPN | Euro"
   },
   {
     "dns": {
@@ -85,37 +156,35 @@
     "meta": null,
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "hysteria",
         "settings": {
-          "vnext": [
-            {
-              "address": "31.59.216.121",
-              "port": 2083,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc"
-                }
-              ]
-            }
-          ]
+          "address": "45.88.12.122",
+          "port": 443,
+          "version": 2
         },
         "streamSettings": {
-          "network": "ws",
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
           "security": "tls",
           "tlsSettings": {
             "alpn": [
-              "http/1.1"
+              "h3"
             ],
             "enableSessionResumption": false,
             "fingerprint": "chrome",
             "serverName": "crt.onecloudstream.com"
-          },
-          "wsSettings": {
-            "headers": {},
-            "host": "",
-            "path": "/vless-ws"
           }
         },
         "tag": "proxy"
@@ -129,7 +198,6 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇩🇪 KrabirVPN | Flash",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
@@ -142,7 +210,8 @@
           "type": "field"
         }
       ]
-    }
+    },
+    "remarks": "🇩🇪 KrabirVPN | Flash"
   },
   {
     "burstObservatory": {
