@@ -521,7 +521,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇵🇱 Krabir | PL | Fast",
+    "remarks": "🇵🇱 KrabirVPN | PL | Fast",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
