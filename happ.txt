@@ -3,7 +3,10 @@
     "remarks": "🇵🇱 KrabirVPN | YouTube",
     "dns": {
       "queryStrategy": "UseIPv4",
-      "servers": ["1.1.1.1", "1.0.0.1"]
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
     },
     "outbounds": [
       {
@@ -49,7 +52,9 @@
       "rules": [
         {
           "type": "field",
-          "protocol": ["bittorrent"],
+          "protocol": [
+            "bittorrent"
+          ],
           "outboundTag": "direct"
         }
       ]
@@ -59,7 +64,10 @@
     "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
       "queryStrategy": "UseIPv4",
-      "servers": ["1.1.1.1", "1.0.0.1"]
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
     },
     "outbounds": [
       {
@@ -75,7 +83,9 @@
           "security": "tls",
           "tlsSettings": {
             "serverName": "mol.ultimagamest.com",
-            "alpn": ["h3"],
+            "alpn": [
+              "h3"
+            ],
             "allowInsecure": false
           },
           "hysteriaSettings": {
@@ -90,7 +100,10 @@
     "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
       "queryStrategy": "UseIPv4",
-      "servers": ["1.1.1.1", "1.0.0.1"]
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
     },
     "outbounds": [
       {
@@ -128,7 +141,10 @@
     "remarks": "🇳🇱 KrabirVPN | Brawl Stars",
     "dns": {
       "queryStrategy": "UseIPv4",
-      "servers": ["1.1.1.1", "1.0.0.1"]
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
     },
     "outbounds": [
       {
@@ -166,7 +182,10 @@
     "remarks": "🇧🇪 KrabirVPN | Alt",
     "dns": {
       "queryStrategy": "UseIPv4",
-      "servers": ["1.1.1.1", "1.0.0.1"]
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
     },
     "outbounds": [
       {
@@ -193,7 +212,9 @@
           "tlsSettings": {
             "serverName": "mol.ultimagamest.com",
             "fingerprint": "chrome",
-            "alpn": ["http/1.1"]
+            "alpn": [
+              "http/1.1"
+            ]
           },
           "wsSettings": {
             "path": "/vless-ws",
@@ -292,6 +313,113 @@
       }
     ],
     "remarks": "🇧🇾 KrabirVPN | CIS",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "138.124.242.247",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇵🇱 DoDoVPN | Запасной | Hysteria",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
