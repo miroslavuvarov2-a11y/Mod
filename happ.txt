@@ -104,7 +104,7 @@
         }
       ]
     },
-    "remarks": "🇩🇪 KrabirVPN | Euro"
+    "remarks": "🇩🇪 KrabirVPN | DE | Normal"
   },
   {
     "dns": {
@@ -211,7 +211,7 @@
         }
       ]
     },
-    "remarks": "🇩🇪 KrabirVPN | Flash"
+    "remarks": "🇩🇪 KrabirVPN | DE | Flash"
   },
   {
     "burstObservatory": {
@@ -374,7 +374,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇳🇱 KrabirVPN | Brawl Stars",
+    "remarks": "🇳🇱 KrabirVPN | NL | Brawl Stars",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
@@ -521,7 +521,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇵🇱 KrabirVPN | YouTube",
+    "remarks": "🇵🇱 KrabirVPN | PL | YouTube",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
@@ -624,7 +624,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇪🇺 KrabirVPN | EU",
+    "remarks": "🇪🇺 KrabirVPN | EU | Euro",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
@@ -761,7 +761,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇺🇸 KrabirVPN | Alt",
+    "remarks": "🇺🇸 KrabirVPN | US | Alt",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
