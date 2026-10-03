@@ -36,45 +36,113 @@
     ]
   },
   {
-    "remarks": "🇩🇪 KrabirVPN | Euro",
     "dns": {
-      "queryStrategy": "UseIPv4",
+      "queryStrategy": "UseIP",
       "servers": [
         "1.1.1.1",
         "1.0.0.1"
       ]
     },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
     "outbounds": [
       {
-        "tag": "proxy",
         "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "45.88.12.92",
-              "port": 8443,
+              "address": "31.59.216.121",
+              "port": 2083,
               "users": [
                 {
-                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision"
+                  "flow": "",
+                  "id": "f9db5515-2675-4a22-a71b-b06e6f78a9dc"
                 }
               ]
             }
           ]
         },
         "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "http/1.1"
+            ],
+            "enableSessionResumption": false,
             "fingerprint": "chrome",
-            "serverName": "www.amazon.com",
-            "publicKey": "4IFrK2mEJSNBJEqyiWLvPgXGNjV8vK49SxPI0RmheWg",
-            "shortId": "df130cd835587313"
+            "serverName": "crt.onecloudstream.com"
+          },
+          "wsSettings": {
+            "headers": {},
+            "host": "",
+            "path": "/vless-ws"
           }
-        }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
       }
-    ]
+    ],
+    "remarks": "🇩🇪  DoDoVPN | VLESS WS TLS ⚡️",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    }
   },
   {
     "burstObservatory": {
