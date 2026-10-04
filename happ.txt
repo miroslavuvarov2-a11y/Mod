@@ -1925,5 +1925,889 @@
         }
       ]
     }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "https://ya.ru",
+        "destination": "https://www.google.com/generate_204",
+        "interval": "5m",
+        "sampling": 2,
+        "timeout": "10s"
+      },
+      "subjectSelector": [
+        "proxy-176",
+        "proxy-177",
+        "proxy-178",
+        "proxy-179",
+        "proxy-180",
+        "proxy-181",
+        "proxy-182",
+        "proxy-183",
+        "proxy-184",
+        "proxy-185",
+        "proxy-186",
+        "proxy-187",
+        "proxy-200",
+        "proxy-201",
+        "proxy-202",
+        "proxy-203",
+        "proxy-204",
+        "proxy-205"
+      ]
+    },
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "https://1.1.1.1/dns-query",
+        "https://1.0.0.1/dns-query"
+      ],
+      "tag": "dns-internal"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "f.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "iErDOn2ctqLbEHP-A3PNO53TC2gPZ1xzahXwxp9OdD0",
+            "serverName": "sberbank.ru",
+            "shortId": "f660f51ac3e795ba"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-81"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a1.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "UT3ZZUQC6OgdagMVufXDnaVHBJD6mvPTj_55Pr5kj3M",
+            "serverName": "yandex.ru",
+            "shortId": "c1cbbd82e37afebd"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-176"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a1.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "w80Ke1_4s9uKusV4r4jYRRSuFEdhgTlzafjt28KXC2w",
+            "serverName": "yandex.ru",
+            "shortId": "5fd36abeb21b39a1"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-177"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a2.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "WyTgffCNn8bdCBQcE7ghqzYxNqRRgq7arCdFqAdDRlk",
+            "serverName": "avito.ru",
+            "shortId": "a68c8d097a9a1b83"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-178"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a2.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "wrt9CX5oCd3qKue_DLR12vCHCiTIu1-0KYxT6RrFnCM",
+            "serverName": "avito.ru",
+            "shortId": "2acc9a8a78299a4c"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-179"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a3.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "9IJwHCY2hsymvxeL2E5KC61fGMWHMwmE53utgjz0c2k",
+            "serverName": "gazeta-business.ru",
+            "shortId": "dca36037373590c8"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-180"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "a3.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "-znQrppPn0AIDwVQ02QQXavC1-oEzH1-q4-RjXddUj4",
+            "serverName": "gazeta-business.ru",
+            "shortId": "e9ef446f720afcbf"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-181"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b1.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "xt9xA8lY1nuG0iboA7Jhp5ep3aEAgvObpbBbDletPXc",
+            "serverName": "yandex.ru",
+            "shortId": "1abb9f10361e5612"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-182"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b1.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "hJVXHWMqW9qen5O6CvAHQofRKIyzeSmPdYh8CXi4qTo",
+            "serverName": "yandex.ru",
+            "shortId": "265f719602f95277"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-183"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b2.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "SQ7FMpMCK7eSg1WLqPIxuuPLeLYbXrr_Ii6AYX07G10",
+            "serverName": "ads.x5.ru",
+            "shortId": "796fbbe7890fd2d4"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-184"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b2.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "GwhFJVELquxqVJ14obdrgirGN8t9wCRSdQ3G6VAD1VE",
+            "serverName": "ads.x5.ru",
+            "shortId": "b5dfccba3ebd9e2c"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-185"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b3.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "dWG_GP2A9Zk0nKNgFswgiInzOdiyEMd9H33VILCeg1Y",
+            "serverName": "gazeta-business.ru",
+            "shortId": "3d704dda8a23e6a5"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-186"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "b3.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "FyxteAyxwJLXiG-KXEI59gxC003fXlHKJ0Vt4APacEU",
+            "serverName": "gazeta-business.ru",
+            "shortId": "c6329d60d366a1ae"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-187"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c1.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "RnQy-zVa4Qc5z1Kca66ZuN9Q17AU9LQB5GQFFdPM_W4",
+            "serverName": "yandex.ru",
+            "shortId": "ca0228581b864ce2"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-200"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c1.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "lO0f4bL38GBQrFmgsN2B8EkBls3vXCNJWOh0dy4WLj0",
+            "serverName": "yandex.ru",
+            "shortId": "dd0a7408365d3143"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-201"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c2.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "VAu74eYLsScmWupu2yxYh8MeBxyDGEuBhsYDsK83vEg",
+            "serverName": "market.yandex.ru",
+            "shortId": "ccd8336bf939351a"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-202"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c2.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "aTSUfUGwrzN_V_1NxTNlAL9sUzAa9OpfwSRkyMsXs1A",
+            "serverName": "market.yandex.ru",
+            "shortId": "02d803c735a594cb"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-203"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c3.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "NwQloPyTLnltaoS52f6fkmu20W5ZUP0BNWgW5x2qhkY",
+            "serverName": "ozon.ru",
+            "shortId": "c2b477e60b45d56c"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-204"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "c3.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "9LMYLkrhpINw6nf4BPhLLIJRBokDcf3wSD4_VbMR_wc",
+            "serverName": "ozon.ru",
+            "shortId": "007222e242745865"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-205"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇫🇷 Krabir | FR | Fast",
+    "routing": {
+      "balancers": [
+        {
+          "fallbackTag": "proxy-81",
+          "selector": [
+            "proxy-176",
+            "proxy-177",
+            "proxy-178",
+            "proxy-179",
+            "proxy-180",
+            "proxy-181",
+            "proxy-182",
+            "proxy-183",
+            "proxy-184",
+            "proxy-185",
+            "proxy-186",
+            "proxy-187",
+            "proxy-200",
+            "proxy-201",
+            "proxy-202",
+            "proxy-203",
+            "proxy-204",
+            "proxy-205"
+          ],
+          "strategy": {
+            "settings": {
+              "baselines": [
+                "4s"
+              ],
+              "expected": 18,
+              "maxRTT": "6s",
+              "tolerance": 0.1
+            },
+            "type": "leastLoad"
+          },
+          "tag": "pool-665d8025564e"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "block",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:oneme.ru",
+            "domain:max.ru",
+            "domain:sferum-dev.ru",
+            "domain:okcdn.ru",
+            "domain:vk-apps.ru",
+            "domain:vk.ru",
+            "domain:vk.com",
+            "domain:vk.cc",
+            "domain:vk.link",
+            "domain:vkontakte.ru",
+            "domain:vkontakte.com",
+            "domain:vk-cdn.net",
+            "domain:userapi.com",
+            "domain:vkuser.net",
+            "domain:vkuseraudio.com",
+            "domain:vkuseraudio.net",
+            "domain:vkuservideo.com",
+            "domain:vkuservideo.net",
+            "domain:vkuserlive.com",
+            "domain:vkuserlive.net",
+            "domain:vkpay.io",
+            "domain:vkpay.com",
+            "domain:vkpay.app",
+            "domain:vkcs.cloud",
+            "domain:ok.ru",
+            "domain:odkl.ru",
+            "domain:tamtam.chat",
+            "domain:mycdn.me",
+            "domain:ok.me",
+            "domain:apiok.ru",
+            "domain:apptracer.ru",
+            "domain:vkvideo.ru",
+            "domain:vk.company",
+            "domain:mail.ru",
+            "domain:tech-mail.ru",
+            "domain:vmailru.net",
+            "domain:smailru.net",
+            "domain:appsmail.ru",
+            "domain:cxhub.ru",
+            "domain:dzen.ru",
+            "domain:dzeninfra.ru",
+            "domain:vkplay.ru",
+            "domain:my.games",
+            "domain:algoritmika.org",
+            "domain:yaklass.ru",
+            "domain:umschool.net",
+            "domain:code-class.ru",
+            "domain:summerstage.ru",
+            "domain:vk-stadium.ru",
+            "domain:tetrika-school.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:yandex.com",
+            "domain:ya.ru",
+            "full:go.yandex"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "network": "udp",
+          "outboundTag": "block",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "balancerTag": "pool-665d8025564e",
+          "inboundTag": [
+            "socks",
+            "http",
+            "dns-internal"
+          ],
+          "network": "tcp,udp",
+          "type": "field"
+        }
+      ]
+    }
   }
 ]
