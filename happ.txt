@@ -2741,6 +2741,448 @@
         "timeout": "10s"
       },
       "subjectSelector": [
+        "proxy-96",
+        "proxy-95",
+        "proxy-97",
+        "proxy-99",
+        "proxy-98",
+        "proxy-100"
+      ]
+    },
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "https://1.1.1.1/dns-query",
+        "https://1.0.0.1/dns-query"
+      ],
+      "tag": "dns-internal"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "g.driftlayerpull.com",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "nNjcQqXK7ND2XSvSjWriZnV5PrQWZGEBWmTecKQzcHM",
+            "serverName": "tesco.com",
+            "shortId": "d69840f97d53e14e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "grpcSettings": {
+            "multiMode": false,
+            "serviceName": "grpc"
+          }
+        },
+        "tag": "proxy-96"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "g.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "nNjcQqXK7ND2XSvSjWriZnV5PrQWZGEBWmTecKQzcHM",
+            "serverName": "tesco.com",
+            "shortId": "d69840f97d53e14e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-95"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "g.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "nNjcQqXK7ND2XSvSjWriZnV5PrQWZGEBWmTecKQzcHM",
+            "serverName": "tesco.com",
+            "shortId": "d69840f97d53e14e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-97"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "h.driftlayerpull.com",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "Vu0n12MmpRLQO9sn1QJK6ZuvZ2KiK_4IToOvJynKdVs",
+            "serverName": "amazon.co.uk",
+            "shortId": "3fa3d038667263ed"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "grpcSettings": {
+            "multiMode": false,
+            "serviceName": "grpc"
+          }
+        },
+        "tag": "proxy-99"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "h.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "Vu0n12MmpRLQO9sn1QJK6ZuvZ2KiK_4IToOvJynKdVs",
+            "serverName": "amazon.co.uk",
+            "shortId": "3fa3d038667263ed"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-98"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "h.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "Vu0n12MmpRLQO9sn1QJK6ZuvZ2KiK_4IToOvJynKdVs",
+            "serverName": "amazon.co.uk",
+            "shortId": "3fa3d038667263ed"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-100"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "i.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "hfbxUkKkcvMI3vrev7UJuGX8B0R-pvnTwf3a0uOeeUY",
+            "serverName": "gov.uk",
+            "shortId": "a40a0186c492b534"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-101"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇬🇧 KrabirVPN | GB | Pro",
+    "routing": {
+      "balancers": [
+        {
+          "fallbackTag": "proxy-101",
+          "selector": [
+            "proxy-96",
+            "proxy-95",
+            "proxy-97",
+            "proxy-99",
+            "proxy-98",
+            "proxy-100"
+          ],
+          "strategy": {
+            "settings": {
+              "baselines": [
+                "4s"
+              ],
+              "expected": 6,
+              "maxRTT": "6s",
+              "tolerance": 0.1
+            },
+            "type": "leastLoad"
+          },
+          "tag": "pool-f0be6c8cedd1"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "block",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:oneme.ru",
+            "domain:max.ru",
+            "domain:sferum-dev.ru",
+            "domain:okcdn.ru",
+            "domain:vk-apps.ru",
+            "domain:vk.ru",
+            "domain:vk.com",
+            "domain:vk.cc",
+            "domain:vk.link",
+            "domain:vkontakte.ru",
+            "domain:vkontakte.com",
+            "domain:vk-cdn.net",
+            "domain:userapi.com",
+            "domain:vkuser.net",
+            "domain:vkuseraudio.com",
+            "domain:vkuseraudio.net",
+            "domain:vkuservideo.com",
+            "domain:vkuservideo.net",
+            "domain:vkuserlive.com",
+            "domain:vkuserlive.net",
+            "domain:vkpay.io",
+            "domain:vkpay.com",
+            "domain:vkpay.app",
+            "domain:vkcs.cloud",
+            "domain:ok.ru",
+            "domain:odkl.ru",
+            "domain:tamtam.chat",
+            "domain:mycdn.me",
+            "domain:ok.me",
+            "domain:apiok.ru",
+            "domain:apptracer.ru",
+            "domain:vkvideo.ru",
+            "domain:vk.company",
+            "domain:mail.ru",
+            "domain:tech-mail.ru",
+            "domain:vmailru.net",
+            "domain:smailru.net",
+            "domain:appsmail.ru",
+            "domain:cxhub.ru",
+            "domain:dzen.ru",
+            "domain:dzeninfra.ru",
+            "domain:vkplay.ru",
+            "domain:my.games",
+            "domain:algoritmika.org",
+            "domain:yaklass.ru",
+            "domain:umschool.net",
+            "domain:code-class.ru",
+            "domain:summerstage.ru",
+            "domain:vk-stadium.ru",
+            "domain:tetrika-school.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:yandex.com",
+            "domain:ya.ru",
+            "full:go.yandex"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "network": "udp",
+          "outboundTag": "block",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "balancerTag": "pool-f0be6c8cedd1",
+          "inboundTag": [
+            "socks",
+            "http",
+            "dns-internal"
+          ],
+          "network": "tcp,udp",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "https://ya.ru",
+        "destination": "https://www.google.com/generate_204",
+        "interval": "5m",
+        "sampling": 2,
+        "timeout": "10s"
+      },
+      "subjectSelector": [
         "proxy-137",
         "proxy-139",
         "proxy-141"
@@ -3745,7 +4187,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇷🇺 Krabir | RU | YouTube",
+    "remarks": "🇷🇺 KrabirVPN | RU | YouTube",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
