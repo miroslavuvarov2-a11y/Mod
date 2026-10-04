@@ -1725,7 +1725,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇫🇮 Krabir | FI | Flash",
+    "remarks": "🇫🇮 KrabirVPN | FI | Flash",
     "routing": {
       "balancers": [
         {
@@ -2602,7 +2602,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇫🇷 Krabir | FR | Fast",
+    "remarks": "🇫🇷 KrabirVPN | FR | Fast",
     "routing": {
       "balancers": [
         {
