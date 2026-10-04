@@ -1,1107 +1,6 @@
 [
   {
     "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "hysteria",
-        "settings": {
-          "address": "45.88.12.122",
-          "port": 443,
-          "version": 2
-        },
-        "streamSettings": {
-          "finalmask": {
-            "quicParams": {
-              "brutalDown": "2000 mbps",
-              "brutalUp": "2000 mbps",
-              "congestion": "brutal",
-              "keepAlivePeriod": 10,
-              "maxIdleTimeout": 20
-            }
-          },
-          "hysteriaSettings": {
-            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": [
-              "h3"
-            ],
-            "enableSessionResumption": false,
-            "fingerprint": "chrome",
-            "serverName": "crt.onecloudstream.com"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        }
-      ]
-    },
-    "remarks": "🇩🇪 KrabirVPN | DE | Normal"
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "hysteria",
-        "settings": {
-          "address": "45.88.12.122",
-          "port": 443,
-          "version": 2
-        },
-        "streamSettings": {
-          "finalmask": {
-            "quicParams": {
-              "brutalDown": "2000 mbps",
-              "brutalUp": "2000 mbps",
-              "congestion": "brutal",
-              "keepAlivePeriod": 10,
-              "maxIdleTimeout": 20
-            }
-          },
-          "hysteriaSettings": {
-            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": [
-              "h3"
-            ],
-            "enableSessionResumption": false,
-            "fingerprint": "chrome",
-            "serverName": "crt.onecloudstream.com"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        }
-      ]
-    },
-    "remarks": "🇩🇪 KrabirVPN | DE | Flash"
-  },
-  {
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "http://www.gstatic.com/generate_204",
-        "interval": "30s",
-        "sampling": 3,
-        "timeout": "5s"
-      },
-      "subjectSelector": [
-        "proxy"
-      ]
-    },
-    "dns": {
-      "disableFallback": false,
-      "hosts": {
-        "cloudflare-dns.com": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ],
-        "common.dot.dns.yandex.net": [
-          "77.88.8.8",
-          "77.88.8.1"
-        ],
-        "dns.google": [
-          "8.8.8.8",
-          "8.8.4.4"
-        ],
-        "lkfl2.nalog.ru": "213.24.64.175",
-        "lknpd.nalog.ru": "213.24.64.181",
-        "one.one.one.one": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ]
-      },
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        {
-          "address": "localhost",
-          "domains": [
-            "geosite:private",
-            "domain:vaultberry.cloud",
-            "domain:geodema.network",
-            "domain:geodema.love",
-            "domain:moscow-neversleep.digital"
-          ],
-          "skipFallback": true,
-          "tag": "local-dns"
-        },
-        {
-          "address": "https://common.dot.dns.yandex.net/dns-query",
-          "domains": [
-            "geosite:category-ru",
-            "domain:nalog.ru",
-            "domain:gov.ru",
-            "domain:mwscdn.ru"
-          ],
-          "skipFallback": true,
-          "tag": "yandex-dns",
-          "timeoutMs": 1000
-        },
-        {
-          "address": "https://cloudflare-dns.com/dns-query",
-          "tag": "cloudflare-dns",
-          "timeoutMs": 1000
-        },
-        {
-          "address": "https://dns.google/dns-query",
-          "tag": "google-dns",
-          "timeoutMs": 1000
-        },
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "mux": {
-          "concurrency": 6,
-          "enabled": true,
-          "xudpConcurrency": 4,
-          "xudpProxyUDP443": "reject"
-        },
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "eu86.vaultberry.cloud",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "ad80695b-5b09-4025-abae-d90c23a4f734"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "zYNnGVEkMFCUR_9NcYeaXfm9A_L-PP6iG2sIIST6S0M",
-            "serverName": "eu86.vaultberry.cloud",
-            "shortId": "1ed136481e0ede74"
-          },
-          "security": "reality",
-          "tcpSettings": {}
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇳🇱 KrabirVPN | NL | Brawl Stars",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "ip": [
-            "::/0"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "geosite:private"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:speedtest.net",
-            "domain:ookla.com",
-            "domain:speedtest.com",
-            "domain:fast.com",
-            "domain:nperf.com",
-            "domain:speedof.me",
-            "domain:librespeed.org",
-            "domain:openspeedtest.com",
-            "domain:speedcheck.org",
-            "domain:testmy.net",
-            "domain:measurementlab.net",
-            "domain:speedtestcustom.com",
-            "domain:waveform.com"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "hysteria",
-        "settings": {
-          "address": "138.124.242.247",
-          "port": 443,
-          "version": 2
-        },
-        "streamSettings": {
-          "finalmask": {
-            "quicParams": {
-              "brutalDown": "2000 mbps",
-              "brutalUp": "2000 mbps",
-              "congestion": "brutal",
-              "keepAlivePeriod": 10,
-              "maxIdleTimeout": 20
-            }
-          },
-          "hysteriaSettings": {
-            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": [
-              "h3"
-            ],
-            "enableSessionResumption": false,
-            "fingerprint": "chrome",
-            "serverName": "crt.onecloudstream.com"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇵🇱 KrabirVPN | PL | Fast",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "hysteria",
-        "settings": {
-          "address": "gate.edgemesh.app",
-          "port": 54183,
-          "version": 2
-        },
-        "streamSettings": {
-          "finalmask": {
-            "quicParams": {
-              "congestion": "bbr",
-              "debug": false
-            }
-          },
-          "hysteriaSettings": {
-            "auth": "2ba62983-3c04-4713-935b-3cee61e8e125",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": [
-              "h3"
-            ],
-            "fingerprint": "chrome",
-            "serverName": "gate.edgemesh.app"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇪🇺 KrabirVPN | EU | Euro",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "domain": [
-            "oneme.ru",
-            "oneme.app",
-            "max.ru"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private",
-            "geoip:ru"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "domain": [
-            "avito.st",
-            "domain:kdrop.app",
-            "geosite:category-ru",
-            "regexp:.*\\.ru$",
-            "regexp:.*\\.xn--p1ai$",
-            "regexp:.*\\.xn--p1acf$",
-            "regexp:.*\\.xn--p1ag$"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "2.56.122.157",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "grpcSettings": {
-            "health_check_timeout": 20,
-            "idle_timeout": 60,
-            "permit_without_stream": true,
-            "serviceName": ""
-          },
-          "network": "grpc",
-          "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "ztybmcbn45-cXE7A-dpG_XgWI7m3luimU9YWOG5JH0g",
-            "serverName": "cdn.oakspan.net",
-            "shortId": "c48ecaca6579ae58"
-          },
-          "security": "reality"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇺🇸 KrabirVPN | US | Alt",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "domain": [
-            "oneme.ru",
-            "oneme.app",
-            "max.ru"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:googlevideo.com"
-          ],
-          "outboundTag": "proxy",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private",
-            "geoip:ru"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "domain": [
-            "avito.st",
-            "domain:kdrop.app",
-            "geosite:category-ru",
-            "regexp:.*\\.ru$",
-            "regexp:.*\\.xn--p1ai$",
-            "regexp:.*\\.xn--p1acf$",
-            "regexp:.*\\.xn--p1ag$"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "mux": {
-          "concurrency": 8,
-          "enabled": true
-        },
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "45.139.226.116",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "04IN2DYDcfpWlYcReoK9sCvBZSLPrCqt2SnZMHkVDxs",
-            "serverName": "cdn.brightloom.net",
-            "shortId": "4dfce308f2074197"
-          },
-          "security": "reality"
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇸🇬 KrabirVPN | SG | TikTok",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "domain": [
-            "oneme.ru",
-            "oneme.app",
-            "max.ru"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:googlevideo.com"
-          ],
-          "outboundTag": "proxy",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private",
-            "geoip:ru"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "domain": [
-            "avito.st",
-            "domain:kdrop.app",
-            "geosite:category-ru",
-            "regexp:.*\\.ru$",
-            "regexp:.*\\.xn--p1ai$",
-            "regexp:.*\\.xn--p1acf$",
-            "regexp:.*\\.xn--p1ag$"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "45.8.99.151",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "YN44AOFmTqjJ8jGXDug0mWFYsCeMN_1oh8muB8DoDFM",
-            "serverName": "ru1.kdrop.app",
-            "shortId": "85c6a7970f8d979a"
-          },
-          "security": "reality",
-          "xhttpSettings": {
-            "extra": {
-              "xmux": {
-                "cMaxLifetimeMs": 0,
-                "cMaxReuseTimes": 0,
-                "hKeepAlivePeriod": 30,
-                "hMaxRequestTimes": "600-900",
-                "maxConcurrency": "16-32",
-                "maxConnections": 0
-              }
-            },
-            "mode": "stream-one",
-            "path": "/"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇷🇺 Krabir | RU | YouTube",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "domain": [
-            "oneme.ru",
-            "oneme.app",
-            "max.ru"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private",
-            "geoip:ru"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "domain": [
-            "avito.st",
-            "domain:kdrop.app",
-            "geosite:category-ru",
-            "regexp:.*\\.ru$",
-            "regexp:.*\\.xn--p1ai$",
-            "regexp:.*\\.xn--p1acf$",
-            "regexp:.*\\.xn--p1ag$"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
       "queryStrategy": "UseIPv4",
       "servers": [
         {
@@ -1920,6 +819,772 @@
         },
         {
           "balancerTag": "balancer",
+          "network": "tcp,udp",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "45.88.12.122",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    },
+    "remarks": "🇩🇪 KrabirVPN | DE | Flash"
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "45.88.12.122",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    },
+    "remarks": "🇩🇪 KrabirVPN | DE | Normal"
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "gate.edgemesh.app",
+          "port": 54183,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "congestion": "bbr",
+              "debug": false
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "2ba62983-3c04-4713-935b-3cee61e8e125",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "gate.edgemesh.app"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇪🇺 KrabirVPN | EU | Euro",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "oneme.ru",
+            "oneme.app",
+            "max.ru"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private",
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "avito.st",
+            "domain:kdrop.app",
+            "geosite:category-ru",
+            "regexp:.*\\.ru$",
+            "regexp:.*\\.xn--p1ai$",
+            "regexp:.*\\.xn--p1acf$",
+            "regexp:.*\\.xn--p1ag$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "https://ya.ru",
+        "destination": "https://www.google.com/generate_204",
+        "interval": "5m",
+        "sampling": 2,
+        "timeout": "10s"
+      },
+      "subjectSelector": [
+        "proxy-110",
+        "proxy-109",
+        "proxy-111",
+        "proxy-113",
+        "proxy-112",
+        "proxy-114"
+      ]
+    },
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "https://1.1.1.1/dns-query",
+        "https://1.0.0.1/dns-query"
+      ],
+      "tag": "dns-internal"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "v.driftlayerpull.com",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "grpcSettings": {
+            "multiMode": false,
+            "serviceName": "grpc"
+          },
+          "network": "grpc",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "t4QDaiUd9SU7C8Vd1lFCAqCCoD3Q6Jeb3K8CxD4nL0o",
+            "serverName": "yandex.ru",
+            "shortId": "37b816d1fabcd913"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-110"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "v.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "6IdgU2RxntOt-a5jhfn7js6n-D-3CyZWRDPOVST0aRM",
+            "serverName": "yandex.ru",
+            "shortId": "244e4331a366b13b"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-109"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "v.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "iMDVXNgj_3F_wJWf_pbwWbuL33OYd35SFCv9IKeDpwc",
+            "serverName": "yandex.ru",
+            "shortId": "dd9c9296be520cb4"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-111"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "t.driftlayerpull.com",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "grpcSettings": {
+            "multiMode": false,
+            "serviceName": "grpc"
+          },
+          "network": "grpc",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "ZKaAzGCR1r7IvWY3L_krAsfWRR6aw3B_JTPlW6SiElM",
+            "serverName": "yandex.ru",
+            "shortId": "e1287c19828ffe2e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-113"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "t.driftlayerpull.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "ZKaAzGCR1r7IvWY3L_krAsfWRR6aw3B_JTPlW6SiElM",
+            "serverName": "tesco.com",
+            "shortId": "e1287c19828ffe2e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "tcpSettings": {}
+        },
+        "tag": "proxy-112"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "t.driftlayerpull.com",
+              "port": 444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "9a2c353d-87c3-4480-bc0d-83589a01970c"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "ZKaAzGCR1r7IvWY3L_krAsfWRR6aw3B_JTPlW6SiElM",
+            "serverName": "booking.com",
+            "shortId": "e1287c19828ffe2e"
+          },
+          "security": "reality",
+          "sockopt": {
+            "tcpKeepAliveInterval": 30,
+            "tcpMaxSeg": 1400
+          },
+          "xhttpSettings": {
+            "mode": "auto",
+            "path": "/"
+          }
+        },
+        "tag": "proxy-114"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIPv4"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇫🇮 Krabir | FI | Flash",
+    "routing": {
+      "balancers": [
+        {
+          "selector": [
+            "proxy-110",
+            "proxy-109",
+            "proxy-111",
+            "proxy-113",
+            "proxy-112",
+            "proxy-114"
+          ],
+          "strategy": {
+            "settings": {
+              "baselines": [
+                "4s"
+              ],
+              "expected": 6,
+              "maxRTT": "6s",
+              "tolerance": 0.1
+            },
+            "type": "leastLoad"
+          },
+          "tag": "pool-a3f11f4e08f4"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "block",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:oneme.ru",
+            "domain:max.ru",
+            "domain:sferum-dev.ru",
+            "domain:okcdn.ru",
+            "domain:vk.ru",
+            "domain:vk.com",
+            "domain:vkontakte.ru",
+            "domain:mail.ru",
+            "domain:dzen.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:yandex.com",
+            "domain:ya.ru",
+            "domain:ozon.ru",
+            "domain:gosuslugi.ru",
+            "domain:rzd.ru",
+            "domain:tbank.ru",
+            "domain:alfabank.ru",
+            "domain:vtb.ru",
+            "domain:mts.ru",
+            "domain:beeline.ru",
+            "domain:megafon.ru",
+            "domain:t2.ru",
+            "domain:rutube.ru",
+            "domain:kinopoisk.ru",
+            "domain:hh.ru",
+            "domain:x5.ru",
+            "domain:avito.ru",
+            "domain:boosty.to",
+            "domain:wb.ru",
+            "domain:wildberries.ru",
+            "domain:1c.ru",
+            "domain:2gis.ru",
+            "domain:cloud.ru",
+            "domain:cdek.ru",
+            "domain:citilink.ru",
+            "domain:consultant.ru",
+            "domain:detmir.ru",
+            "domain:dns-shop.ru",
+            "domain:ivi.ru",
+            "domain:kaspersky.ru",
+            "domain:kommersant.ru",
+            "domain:lamoda.ru",
+            "domain:lenta.ru",
+            "domain:magnit.ru",
+            "domain:mos.ru",
+            "domain:mvideo.ru",
+            "domain:nalog.ru",
+            "domain:okko.ru",
+            "domain:pochta.ru",
+            "domain:psbank.ru",
+            "domain:rambler.ru",
+            "domain:rbc.ru",
+            "domain:rostelecom.ru",
+            "domain:sber.ru",
+            "domain:sferum.ru",
+            "domain:tinkoff.ru",
+            "domain:vk.me",
+            "domain:wbstatic.net",
+            "domain:yoomoney.ru",
+            "domain:yota.ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "network": "udp",
+          "outboundTag": "block",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "balancerTag": "pool-a3f11f4e08f4",
+          "inboundTag": [
+            "socks",
+            "http",
+            "dns-internal"
+          ],
           "network": "tcp,udp",
           "type": "field"
         }
@@ -2805,6 +2470,760 @@
             "dns-internal"
           ],
           "network": "tcp,udp",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "http://www.gstatic.com/generate_204",
+        "interval": "30s",
+        "sampling": 3,
+        "timeout": "5s"
+      },
+      "subjectSelector": [
+        "proxy"
+      ]
+    },
+    "dns": {
+      "disableFallback": false,
+      "hosts": {
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "common.dot.dns.yandex.net": [
+          "77.88.8.8",
+          "77.88.8.1"
+        ],
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "lkfl2.nalog.ru": "213.24.64.175",
+        "lknpd.nalog.ru": "213.24.64.181",
+        "one.one.one.one": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ]
+      },
+      "queryStrategy": "UseIPv4",
+      "servers": [
+        "1.1.1.1",
+        {
+          "address": "localhost",
+          "domains": [
+            "geosite:private",
+            "domain:vaultberry.cloud",
+            "domain:geodema.network",
+            "domain:geodema.love",
+            "domain:moscow-neversleep.digital"
+          ],
+          "skipFallback": true,
+          "tag": "local-dns"
+        },
+        {
+          "address": "https://common.dot.dns.yandex.net/dns-query",
+          "domains": [
+            "geosite:category-ru",
+            "domain:nalog.ru",
+            "domain:gov.ru",
+            "domain:mwscdn.ru"
+          ],
+          "skipFallback": true,
+          "tag": "yandex-dns",
+          "timeoutMs": 1000
+        },
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "tag": "cloudflare-dns",
+          "timeoutMs": 1000
+        },
+        {
+          "address": "https://dns.google/dns-query",
+          "tag": "google-dns",
+          "timeoutMs": 1000
+        },
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 6,
+          "enabled": true,
+          "xudpConcurrency": 4,
+          "xudpProxyUDP443": "reject"
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "eu86.vaultberry.cloud",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "ad80695b-5b09-4025-abae-d90c23a4f734"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "zYNnGVEkMFCUR_9NcYeaXfm9A_L-PP6iG2sIIST6S0M",
+            "serverName": "eu86.vaultberry.cloud",
+            "shortId": "1ed136481e0ede74"
+          },
+          "security": "reality",
+          "tcpSettings": {}
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇳🇱 KrabirVPN | NL | Brawl Stars",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "::/0"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:speedtest.net",
+            "domain:ookla.com",
+            "domain:speedtest.com",
+            "domain:fast.com",
+            "domain:nperf.com",
+            "domain:speedof.me",
+            "domain:librespeed.org",
+            "domain:openspeedtest.com",
+            "domain:speedcheck.org",
+            "domain:testmy.net",
+            "domain:measurementlab.net",
+            "domain:speedtestcustom.com",
+            "domain:waveform.com"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "138.124.242.247",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇵🇱 KrabirVPN | PL | Fast",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "45.8.99.151",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "YN44AOFmTqjJ8jGXDug0mWFYsCeMN_1oh8muB8DoDFM",
+            "serverName": "ru1.kdrop.app",
+            "shortId": "85c6a7970f8d979a"
+          },
+          "security": "reality",
+          "xhttpSettings": {
+            "extra": {
+              "xmux": {
+                "cMaxLifetimeMs": 0,
+                "cMaxReuseTimes": 0,
+                "hKeepAlivePeriod": 30,
+                "hMaxRequestTimes": "600-900",
+                "maxConcurrency": "16-32",
+                "maxConnections": 0
+              }
+            },
+            "mode": "stream-one",
+            "path": "/"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇷🇺 Krabir | RU | YouTube",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "oneme.ru",
+            "oneme.app",
+            "max.ru"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private",
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "avito.st",
+            "domain:kdrop.app",
+            "geosite:category-ru",
+            "regexp:.*\\.ru$",
+            "regexp:.*\\.xn--p1ai$",
+            "regexp:.*\\.xn--p1acf$",
+            "regexp:.*\\.xn--p1ag$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": true
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "45.139.226.116",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "04IN2DYDcfpWlYcReoK9sCvBZSLPrCqt2SnZMHkVDxs",
+            "serverName": "cdn.brightloom.net",
+            "shortId": "4dfce308f2074197"
+          },
+          "security": "reality"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇸🇬 KrabirVPN | SG | TikTok",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "oneme.ru",
+            "oneme.app",
+            "max.ru"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:googlevideo.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private",
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "avito.st",
+            "domain:kdrop.app",
+            "geosite:category-ru",
+            "regexp:.*\\.ru$",
+            "regexp:.*\\.xn--p1ai$",
+            "regexp:.*\\.xn--p1acf$",
+            "regexp:.*\\.xn--p1ag$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "2.56.122.157",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "2ba62983-3c04-4713-935b-3cee61e8e125"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "grpcSettings": {
+            "health_check_timeout": 20,
+            "idle_timeout": 60,
+            "permit_without_stream": true,
+            "serviceName": ""
+          },
+          "network": "grpc",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "ztybmcbn45-cXE7A-dpG_XgWI7m3luimU9YWOG5JH0g",
+            "serverName": "cdn.oakspan.net",
+            "shortId": "c48ecaca6579ae58"
+          },
+          "security": "reality"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇺🇸 KrabirVPN | US | Alt",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "oneme.ru",
+            "oneme.app",
+            "max.ru"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:googlevideo.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private",
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "domain": [
+            "avito.st",
+            "domain:kdrop.app",
+            "geosite:category-ru",
+            "regexp:.*\\.ru$",
+            "regexp:.*\\.xn--p1ai$",
+            "regexp:.*\\.xn--p1acf$",
+            "regexp:.*\\.xn--p1ag$"
+          ],
+          "outboundTag": "direct",
           "type": "field"
         }
       ]
