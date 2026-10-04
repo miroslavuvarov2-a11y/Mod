@@ -4959,5 +4959,240 @@
         }
       ]
     }
+  },
+  {
+    "dns": {
+      "hosts": {
+        "dns.google": "8.8.8.8"
+      },
+      "queryStrategy": "IPIfNonMatch",
+      "servers": [
+        {
+          "address": "https://dns.google/dns-query",
+          "skipFallback": false
+        },
+        {
+          "address": "77.88.8.8",
+          "domains": [
+            "geosite:category-ru",
+            "regexp:\\.ru$",
+            "regexp:\\.su$",
+            "regexp:\\.xn--p1ai$"
+          ],
+          "port": 53,
+          "skipFallback": true
+        }
+      ],
+      "tag": "dns_out"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fakeukri.kovsh.lol",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "3b4d6663-a86a-4480-841c-a511bda5033f"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "T0rs8JahQFJ0vF6W04f9_quTjT-5tNMEYHzjvYSeqFs",
+            "serverName": "fakeukri.kovsh.lol",
+            "shortId": "6c050e745decc363",
+            "spiderX": "/"
+          },
+          "security": "reality",
+          "tcpSettings": {}
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "0": {
+          "statsUserDownlink": true,
+          "statsUserUplink": true
+        },
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
+        }
+      },
+      "system": {
+        "statsInboundDownlink": true,
+        "statsInboundUplink": true,
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "remarks": "🇺🇦 Украина",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "geosite:google-deepmind",
+            "domain:alkalicontent-pa.clients6.google.com",
+            "domain:alkalimining-pa.googleapis.com",
+            "domain:deepmind.google",
+            "domain:deepmind.com",
+            "domain:googleai.staticfilter.com",
+            "domain:googleusercontent.com",
+            "domain:identitytoolkit.googleapis.com",
+            "domain:labs.google",
+            "domain:labs.google.com",
+            "domain:aistudio.google.com",
+            "domain:gemini.google.com",
+            "domain:gemini.google",
+            "domain:clients6.google.com",
+            "domain:notebooklm.google",
+            "domain:notebooklm.google.com",
+            "domain:generativelanguage.googleapis.com",
+            "domain:alkalimakersuite-pa.clients6.google.com",
+            "domain:proactivebackend-pa.googleapis.com",
+            "domain:geller-pa.googleapis.com",
+            "domain:robinfrontend-pa.googleapis.com",
+            "domain:ai.google.dev",
+            "domain:alkalicore-pa.clients6.google.com",
+            "domain:webchannel-alkalimakersuite-pa.clients6.google.com",
+            "domain:generativeai.google",
+            "domain:makersuite.google.com",
+            "domain:ai.studio",
+            "domain:bard.google.com",
+            "domain:cloudaicompanion.googleapis.com",
+            "domain:cloudcode-pa.googleapis.com",
+            "domain:daily-cloudcode-pa.googleapis.com",
+            "domain:notebooklm-pa.googleapis.com",
+            "domain:notebooklm.googleapis.com",
+            "domain:jules.google",
+            "domain:jules.google.com",
+            "domain:aicode.googleapis.com",
+            "domain:aida.googleapis.com",
+            "domain:aisandbox-pa.googleapis.com",
+            "domain:opal.google",
+            "domain:opal.google.com",
+            "domain:antigravity-pa.googleapis.com",
+            "domain:antigravity.googleapis.com",
+            "domain:antigravity.google",
+            "domain:antigravity-unleash.goog",
+            "domain:stitch.withgoogle.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "77.88.8.8"
+          ],
+          "outboundTag": "direct",
+          "port": 53,
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:ru"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:category-ru",
+            "regexp:\\.ru$",
+            "regexp:\\.su$",
+            "regexp:\\.xn--p1ai$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
   }
 ]
