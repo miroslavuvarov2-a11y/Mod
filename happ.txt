@@ -5091,7 +5091,7 @@
         "statsOutboundUplink": true
       }
     },
-    "remarks": "🇺🇦 Украина",
+    "remarks": "🇺🇦 KrabirVPN | UA | AI",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
