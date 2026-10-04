@@ -1,0 +1,40 @@
+name: Ad Astra 26.2 port build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [port/ad-astra-26.2]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout port workspace
+        uses: actions/checkout@v4
+
+      - name: Checkout Ad Astra 1.20.1 source
+        uses: actions/checkout@v4
+        with:
+          repository: terrarium-earth/Ad-Astra
+          ref: 1.20.1
+          path: ad-astra-upstream
+
+      - name: Install Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Prepare port tree
+        run: |
+          mkdir -p ad-astra-26.2/src
+          cp -R ad-astra-upstream/common/src/main ad-astra-26.2/src/main-upstream
+          cp ad-astra-upstream/LICENSE ad-astra-26.2/UPSTREAM-LICENSE
+          echo "Upstream Ad Astra source staged for migration."
+
+      - name: Show migration baseline
+        working-directory: ad-astra-26.2
+        run: |
+          find src/main-upstream/java -name '*.java' | wc -l
+          find src/main-upstream/resources -type f | wc -l
+          java -version
