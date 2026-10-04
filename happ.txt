@@ -5091,7 +5091,7 @@
         "statsOutboundUplink": true
       }
     },
-    "remarks": "🇺🇦 KrabirVPN | UA | AI",
+    "remarks": "🇺🇦 KrabirVPN | UA | Fast",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
