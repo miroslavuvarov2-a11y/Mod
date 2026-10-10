@@ -447,6 +447,136 @@
       ]
     },
     "dns": {
+      "queryStrategy": "UseIPv4"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-in"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10820,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-direct"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "194.61.31.126",
+              "port": 2053,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
+                  "level": 8
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "isCustomFinalmask": false,
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
+            "serverName": "www.apple.com",
+            "shortId": "9980e0609b0d3891",
+            "show": false,
+            "spiderX": ""
+          },
+          "security": "reality",
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇮🇳 KrabirVPN | IN | YouTube",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "inboundTag": [
+            "socks-direct"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    },
+    "log": {
+      "dnsLog": true,
+      "loglevel": "Warning"
+    },
+    "policy": {
+      "levels": {
+        "8": {
+          "bufferSize": 3,
+          "connIdle": 300,
+          "downlinkOnly": 4,
+          "handshake": 3,
+          "uplinkOnly": 2
+        }
+      },
+      "system": {}
+    }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "http://www.gstatic.com/generate_204",
+        "interval": "30s",
+        "sampling": 3,
+        "timeout": "5s"
+      },
+      "subjectSelector": [
+        "proxy"
+      ]
+    },
+    "dns": {
       "disableFallback": false,
       "hosts": {
         "cloudflare-dns.com": [
