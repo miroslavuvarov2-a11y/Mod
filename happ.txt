@@ -1841,7 +1841,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇷🇴 KrabirVPN | RO | Reality",
+    "remarks": "🇷🇴 KrabirVPN | RO | Flash",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
