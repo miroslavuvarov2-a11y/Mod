@@ -1886,5 +1886,119 @@
         }
       ]
     }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-in"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10820,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-direct"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "130.49.161.70",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "congestion": "brutal"
+            },
+            "udp": [
+              {
+                "settings": {
+                  "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
+                },
+                "type": "salamander"
+              }
+            ]
+          },
+          "hysteriaSettings": {
+            "auth": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
+            "version": 2
+          },
+          "isCustomFinalmask": false,
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "disableSystemRoot": false,
+            "enableSessionResumption": false,
+            "serverName": "hy2.aspidnet.xyz"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "bufferSize": 3,
+          "connIdle": 300,
+          "downlinkOnly": 4,
+          "handshake": 3,
+          "uplinkOnly": 2
+        }
+      },
+      "system": {}
+    },
+    "remarks": "🇦🇪 KrabirVPN | AE | TikTok",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "inboundTag": [
+            "socks-direct"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
   }
 ]
