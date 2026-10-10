@@ -1544,12 +1544,20 @@
     }
   },
   {
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "http://www.gstatic.com/generate_204",
+        "interval": "30s",
+        "sampling": 3,
+        "timeout": "5s"
+      },
+      "subjectSelector": [
+        "proxy"
       ]
+    },
+    "dns": {
+      "queryStrategy": "UseIPv4"
     },
     "inbounds": [
       {
@@ -1561,70 +1569,68 @@
           "udp": true
         },
         "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
         },
-        "tag": "socks"
+        "tag": "socks-in"
       },
       {
         "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
+        "port": 10820,
+        "protocol": "socks",
         "settings": {
-          "allowTransparent": false
+          "auth": "noauth",
+          "udp": true
         },
         "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
         },
-        "tag": "http"
+        "tag": "socks-direct"
       }
     ],
-    "log": {
-      "access": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/access.log",
-      "dnsLog": true,
-      "loglevel": "Warning"
-    },
+    "meta": null,
     "outbounds": [
       {
-        "mux": {
-          "concurrency": 8,
-          "enabled": true
-        },
         "protocol": "vless",
         "settings": {
           "vnext": [
             {
-              "address": "45.8.99.151",
+              "address": "194.61.31.126",
               "port": 2053,
               "users": [
                 {
                   "encryption": "none",
-                  "id": "39c3fb1b-262a-487c-8557-6a7237aa475b"
+                  "id": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
+                  "level": 8
                 }
               ]
             }
           ]
         },
         "streamSettings": {
+          "isCustomFinalmask": false,
           "network": "tcp",
           "realitySettings": {
             "fingerprint": "firefox",
-            "publicKey": "YN44AOFmTqjJ8jGXDug0mWFYsCeMN_1oh8muB8DoDFM",
-            "serverName": "ru1.kdrop.app",
-            "shortId": "85c6a7970f8d979a"
+            "publicKey": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
+            "serverName": "www.apple.com",
+            "shortId": "9980e0609b0d3891",
+            "show": false,
+            "spiderX": ""
           },
-          "security": "reality"
+          "security": "reality",
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
+          }
         },
         "tag": "proxy"
       },
@@ -1639,47 +1645,32 @@
     ],
     "remarks": "🇷🇺 KrabirVPN | RU | YouTube",
     "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
+      "domainStrategy": "AsIs",
       "rules": [
         {
-          "domain": [
-            "oneme.ru",
-            "oneme.app",
-            "max.ru"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private",
-            "geoip:ru"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "domain": [
-            "avito.st",
-            "domain:kdrop.app",
-            "geosite:category-ru",
-            "regexp:.*\\.ru$",
-            "regexp:.*\\.xn--p1ai$",
-            "regexp:.*\\.xn--p1acf$",
-            "regexp:.*\\.xn--p1ag$"
+          "inboundTag": [
+            "socks-direct"
           ],
           "outboundTag": "direct",
           "type": "field"
         }
       ]
+    },
+    "log": {
+      "dnsLog": true,
+      "loglevel": "Warning"
+    },
+    "policy": {
+      "levels": {
+        "8": {
+          "bufferSize": 3,
+          "connIdle": 300,
+          "downlinkOnly": 4,
+          "handshake": 3,
+          "uplinkOnly": 2
+        }
+      },
+      "system": {}
     }
   },
   {
@@ -1896,4 +1887,4 @@
       ]
     }
   }
-] 
+]
