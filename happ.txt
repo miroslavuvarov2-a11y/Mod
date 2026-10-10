@@ -436,6 +436,220 @@
     }
   },
   {
+    "dns": {
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "queryStrategy": "UseIPv4",
+      "servers": [
+        "https://cloudflare-dns.com/dns-query",
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": []
+        },
+        {
+          "address": "77.88.8.8",
+          "domains": [
+            "geosite:ru",
+            "regexp:\\.(ru|su|xn--p1ai)$",
+            "domain:ozon.ru",
+            "domain:ozonusercontent.com",
+            "domain:wildberries.ru",
+            "domain:wb.ru",
+            "domain:gosuslugi.ru",
+            "domain:nalog.gov.ru",
+            "domain:mos.ru",
+            "domain:sberbank.ru",
+            "domain:sber.ru",
+            "domain:tbank.ru",
+            "domain:tinkoff.ru",
+            "domain:alfabank.ru",
+            "domain:alfa-bank.ru",
+            "domain:vtb.ru",
+            "domain:gazprombank.ru",
+            "domain:raiffeisen.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:vk.ru",
+            "domain:userapi.com",
+            "domain:mail.ru",
+            "domain:rutube.ru",
+            "domain:2gis.ru",
+            "domain:avito.ru"
+          ],
+          "port": 53
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-in"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10820,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-direct"
+      }
+    ],
+    "log": {
+      "access": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/access.log",
+      "dnsLog": true,
+      "error": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/connectionLogs/2026-10-10_15-20-47.log",
+      "loglevel": "Warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "address": "34.22.111.30",
+          "encryption": "none",
+          "id": "cb2abff3-5fe6-4b5a-aa19-5739deb285b6",
+          "level": 8,
+          "port": 443
+        },
+        "streamSettings": {
+          "isCustomFinalmask": false,
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "M0QKczb2MzOH45qDViIAbb9LPrVVyCp880D4HlwIKnA",
+            "serverName": "www.cloudflare.com",
+            "shortId": "8685f8b4d9f4f51e",
+            "show": false,
+            "spiderX": ""
+          },
+          "security": "reality",
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "bufferSize": 3,
+          "connIdle": 300,
+          "downlinkOnly": 4,
+          "handshake": 3,
+          "uplinkOnly": 2
+        }
+      },
+      "system": {}
+    },
+    "remarks": "🇰🇷 KrabirVPN | KR | Normal",
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "domain": [
+            "geosite:ru",
+            "regexp:\\.(ru|su|xn--p1ai)$",
+            "domain:ozon.ru",
+            "domain:ozonusercontent.com",
+            "domain:wildberries.ru",
+            "domain:wb.ru",
+            "domain:gosuslugi.ru",
+            "domain:nalog.gov.ru",
+            "domain:mos.ru",
+            "domain:sberbank.ru",
+            "domain:sber.ru",
+            "domain:tbank.ru",
+            "domain:tinkoff.ru",
+            "domain:alfabank.ru",
+            "domain:alfa-bank.ru",
+            "domain:vtb.ru",
+            "domain:gazprombank.ru",
+            "domain:raiffeisen.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:vk.ru",
+            "domain:userapi.com",
+            "domain:mail.ru",
+            "domain:rutube.ru",
+            "domain:2gis.ru",
+            "domain:avito.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ru",
+            "geoip:private",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "224.0.0.0/4",
+            "255.255.255.255"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "77.88.8.8"
+          ],
+          "outboundTag": "direct",
+          "port": "53",
+          "type": "field"
+        },
+        {
+          "inboundTag": [
+            "socks-direct"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    }
+  },
+  {
     "burstObservatory": {
       "pingConfig": {
         "connectivity": "",
