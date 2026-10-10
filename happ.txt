@@ -340,6 +340,228 @@
         "settings": {
           "vnext": [
             {
+              "address": "142.91.108.25",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "ee18d188-14cc-417e-beb1-70e4add6d023",
+                  "level": 8
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM",
+            "serverName": "jp3.nztvpn.com",
+            "shortId": "ea36c03d86f91287",
+            "spiderX": ""
+          },
+          "security": "reality",
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇯🇵 KrabirVPN | JP | Normal",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "::/0"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:speedtest.net",
+            "domain:ookla.com",
+            "domain:speedtest.com",
+            "domain:fast.com",
+            "domain:nperf.com",
+            "domain:speedof.me",
+            "domain:librespeed.org",
+            "domain:openspeedtest.com",
+            "domain:speedcheck.org",
+            "domain:testmy.net",
+            "domain:measurementlab.net",
+            "domain:speedtestcustom.com",
+            "domain:waveform.com"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "http://www.gstatic.com/generate_204",
+        "interval": "30s",
+        "sampling": 3,
+        "timeout": "5s"
+      },
+      "subjectSelector": [
+        "proxy"
+      ]
+    },
+    "dns": {
+      "disableFallback": false,
+      "hosts": {
+        "cloudflare-dns.com": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ],
+        "common.dot.dns.yandex.net": [
+          "77.88.8.8",
+          "77.88.8.1"
+        ],
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "lkfl2.nalog.ru": "213.24.64.175",
+        "lknpd.nalog.ru": "213.24.64.181",
+        "one.one.one.one": [
+          "1.1.1.1",
+          "1.0.0.1"
+        ]
+      },
+      "queryStrategy": "UseIPv4",
+      "servers": [
+        "1.1.1.1",
+        {
+          "address": "localhost",
+          "domains": [
+            "geosite:private",
+            "domain:vaultberry.cloud",
+            "domain:geodema.network",
+            "domain:geodema.love",
+            "domain:moscow-neversleep.digital"
+          ],
+          "skipFallback": true,
+          "tag": "local-dns"
+        },
+        {
+          "address": "https://common.dot.dns.yandex.net/dns-query",
+          "domains": [
+            "geosite:category-ru",
+            "domain:nalog.ru",
+            "domain:gov.ru",
+            "domain:mwscdn.ru"
+          ],
+          "skipFallback": true,
+          "tag": "yandex-dns",
+          "timeoutMs": 1000
+        },
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "tag": "cloudflare-dns",
+          "timeoutMs": 1000
+        },
+        {
+          "address": "https://dns.google/dns-query",
+          "tag": "google-dns",
+          "timeoutMs": 1000
+        },
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 6,
+          "enabled": true,
+          "xudpConcurrency": 4,
+          "xudpProxyUDP443": "reject"
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
               "address": "eu86.vaultberry.cloud",
               "port": 443,
               "users": [
@@ -428,6 +650,113 @@
         }
       ]
     }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "meta": null,
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "settings": {
+          "address": "141.0.187.29",
+          "port": 443,
+          "version": 2
+        },
+        "streamSettings": {
+          "finalmask": {
+            "quicParams": {
+              "brutalDown": "2000 mbps",
+              "brutalUp": "2000 mbps",
+              "congestion": "brutal",
+              "keepAlivePeriod": 10,
+              "maxIdleTimeout": 20
+            }
+          },
+          "hysteriaSettings": {
+            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "chrome",
+            "serverName": "crt.onecloudstream.com"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    },
+    "remarks": "🇳🇱 KrabirVPN | NL | Flash"
   },
   {
     "dns": {
@@ -570,184 +899,49 @@
   },
   {
     "dns": {
-      "queryStrategy": "UseIP",
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "hysteria",
-        "settings": {
-          "address": "141.0.187.29",
-          "port": 443,
-          "version": 2
-        },
-        "streamSettings": {
-          "finalmask": {
-            "quicParams": {
-              "brutalDown": "2000 mbps",
-              "brutalUp": "2000 mbps",
-              "congestion": "brutal",
-              "keepAlivePeriod": 10,
-              "maxIdleTimeout": 20
-            }
-          },
-          "hysteriaSettings": {
-            "auth": "f9db5515-2675-4a22-a71b-b06e6f78a9dc",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": [
-              "h3"
-            ],
-            "enableSessionResumption": false,
-            "fingerprint": "chrome",
-            "serverName": "crt.onecloudstream.com"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        }
-      ]
-    },
-    "remarks": "🇳🇱 KrabirVPN | NL | Flash"
-  },
-  {
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "http://www.gstatic.com/generate_204",
-        "interval": "30s",
-        "sampling": 3,
-        "timeout": "5s"
-      },
-      "subjectSelector": [
-        "proxy"
-      ]
-    },
-    "dns": {
-      "disableFallback": false,
       "hosts": {
-        "cloudflare-dns.com": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ],
-        "common.dot.dns.yandex.net": [
-          "77.88.8.8",
-          "77.88.8.1"
-        ],
-        "dns.google": [
-          "8.8.8.8",
-          "8.8.4.4"
-        ],
-        "lkfl2.nalog.ru": "213.24.64.175",
-        "lknpd.nalog.ru": "213.24.64.181",
-        "one.one.one.one": [
-          "1.1.1.1",
-          "1.0.0.1"
-        ]
+        "cloudflare-dns.com": "1.1.1.1"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "1.1.1.1",
-        {
-          "address": "localhost",
-          "domains": [
-            "geosite:private",
-            "domain:vaultberry.cloud",
-            "domain:geodema.network",
-            "domain:geodema.love",
-            "domain:moscow-neversleep.digital"
-          ],
-          "skipFallback": true,
-          "tag": "local-dns"
-        },
-        {
-          "address": "https://common.dot.dns.yandex.net/dns-query",
-          "domains": [
-            "geosite:category-ru",
-            "domain:nalog.ru",
-            "domain:gov.ru",
-            "domain:mwscdn.ru"
-          ],
-          "skipFallback": true,
-          "tag": "yandex-dns",
-          "timeoutMs": 1000
-        },
+        "https://cloudflare-dns.com/dns-query",
         {
           "address": "https://cloudflare-dns.com/dns-query",
-          "tag": "cloudflare-dns",
-          "timeoutMs": 1000
+          "domains": []
         },
         {
-          "address": "https://dns.google/dns-query",
-          "tag": "google-dns",
-          "timeoutMs": 1000
-        },
-        "1.0.0.1"
+          "address": "77.88.8.8",
+          "domains": [
+            "geosite:ru",
+            "regexp:\\.(ru|su|xn--p1ai)$",
+            "domain:ozon.ru",
+            "domain:ozonusercontent.com",
+            "domain:wildberries.ru",
+            "domain:wb.ru",
+            "domain:gosuslugi.ru",
+            "domain:nalog.gov.ru",
+            "domain:mos.ru",
+            "domain:sberbank.ru",
+            "domain:sber.ru",
+            "domain:tbank.ru",
+            "domain:tinkoff.ru",
+            "domain:alfabank.ru",
+            "domain:alfa-bank.ru",
+            "domain:vtb.ru",
+            "domain:gazprombank.ru",
+            "domain:raiffeisen.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:vk.ru",
+            "domain:userapi.com",
+            "domain:mail.ru",
+            "domain:rutube.ru",
+            "domain:2gis.ru",
+            "domain:avito.ru"
+          ],
+          "port": 53
+        }
       ]
     },
     "inbounds": [
@@ -760,68 +954,57 @@
           "udp": true
         },
         "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
         },
-        "tag": "socks"
+        "tag": "socks-in"
       },
       {
         "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
+        "port": 10820,
+        "protocol": "socks",
         "settings": {
-          "allowTransparent": false
+          "auth": "noauth",
+          "udp": true
         },
         "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true,
-          "routeOnly": false
+          "destOverride": [],
+          "domainsExcluded": [],
+          "enabled": false,
+          "metadataOnly": false,
+          "routeOnly": true
         },
-        "tag": "http"
+        "tag": "socks-direct"
       }
     ],
-    "meta": null,
+    "log": {
+      "access": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/access.log",
+      "dnsLog": true,
+      "error": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/connectionLogs/2026-10-10_15-16-42.log",
+      "loglevel": "Warning"
+    },
     "outbounds": [
       {
-        "mux": {
-          "concurrency": 6,
-          "enabled": true,
-          "xudpConcurrency": 4,
-          "xudpProxyUDP443": "reject"
-        },
         "protocol": "vless",
         "settings": {
-          "vnext": [
-            {
-              "address": "142.91.108.25",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision",
-                  "id": "ee18d188-14cc-417e-beb1-70e4add6d023",
-                  "level": 8
-                }
-              ]
-            }
-          ]
+          "address": "136.107.170.196",
+          "encryption": "none",
+          "id": "d6d58f01-b5ce-4d47-bce0-b8a806155852",
+          "level": 8,
+          "port": 443
         },
         "streamSettings": {
+          "isCustomFinalmask": false,
           "network": "tcp",
           "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM",
-            "serverName": "jp3.nztvpn.com",
-            "shortId": "ea36c03d86f91287",
+            "fingerprint": "qq",
+            "publicKey": "L1S0DpFtHPBeyENZUvJPcrFZIct6kcHUPxuzNaGXIFY",
+            "serverName": "www.cloudflare.com",
+            "shortId": "4c69c4b51c580d60",
+            "show": false,
             "spiderX": ""
           },
           "security": "reality",
@@ -842,57 +1025,88 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇯🇵 KrabirVPN | JP | Normal",
+    "policy": {
+      "levels": {
+        "8": {
+          "bufferSize": 3,
+          "connIdle": 300,
+          "downlinkOnly": 4,
+          "handshake": 3,
+          "uplinkOnly": 2
+        }
+      },
+      "system": {}
+    },
+    "remarks": "🇺🇸 KrabirVPN | US | Normal",
     "routing": {
-      "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
       "rules": [
         {
-          "ip": [
-            "::/0"
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": [
-            "bittorrent"
-          ],
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
           "domain": [
-            "geosite:private"
+            "geosite:ru",
+            "regexp:\\.(ru|su|xn--p1ai)$",
+            "domain:ozon.ru",
+            "domain:ozonusercontent.com",
+            "domain:wildberries.ru",
+            "domain:wb.ru",
+            "domain:gosuslugi.ru",
+            "domain:nalog.gov.ru",
+            "domain:mos.ru",
+            "domain:sberbank.ru",
+            "domain:sber.ru",
+            "domain:tbank.ru",
+            "domain:tinkoff.ru",
+            "domain:alfabank.ru",
+            "domain:alfa-bank.ru",
+            "domain:vtb.ru",
+            "domain:gazprombank.ru",
+            "domain:raiffeisen.ru",
+            "domain:yandex.ru",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:vk.ru",
+            "domain:userapi.com",
+            "domain:mail.ru",
+            "domain:rutube.ru",
+            "domain:2gis.ru",
+            "domain:avito.ru"
           ],
-          "outboundTag": "direct",
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ru",
+            "geoip:private",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "224.0.0.0/4",
+            "255.255.255.255"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "443",
           "type": "field"
         },
         {
-          "domain": [
-            "domain:speedtest.net",
-            "domain:ookla.com",
-            "domain:speedtest.com",
-            "domain:fast.com",
-            "domain:nperf.com",
-            "domain:speedof.me",
-            "domain:librespeed.org",
-            "domain:openspeedtest.com",
-            "domain:speedcheck.org",
-            "domain:testmy.net",
-            "domain:measurementlab.net",
-            "domain:speedtestcustom.com",
-            "domain:waveform.com"
+          "ip": [
+            "77.88.8.8"
           ],
           "outboundTag": "direct",
+          "port": "53",
           "type": "field"
+        },
+        {
+          "inboundTag": [
+            "socks-direct"
+          ],
+          "outboundTag": "direct"
         }
       ]
     }
