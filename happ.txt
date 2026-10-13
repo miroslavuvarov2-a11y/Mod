@@ -2207,5 +2207,171 @@
         }
       ]
     }
+  },
+  {
+    "dns": {
+      "hosts": {
+        "game.brawlstarsgame.com": [
+          "44.227.138.182",
+          "44.241.61.155",
+          "52.33.95.61"
+        ]
+      },
+      "queryStrategy": "UseIP",
+      "servers": [
+        "https+local://1.1.1.1/dns-query",
+        "https+local://8.8.8.8/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": true
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": true
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "access": "/private/var/mobile/Containers/Shared/AppGroup/96D8024C-811C-4026-90CF-F5A345F020FE/Library/Application Support/Xray/logs/access.log",
+      "dnsLog": true,
+      "loglevel": "Warning"
+    },
+    "meta": {
+      "serverDescription": "Вход Brawl через Польшу; всё остальное напрямую с устройства · DNS PL1"
+    },
+    "outbounds": [
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "mux": {
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "200.165.224.214",
+              "port": 10004,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "93a5f67b-1ac2-4bba-8ca0-f6eb9bb93a44"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "http/1.1"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "octave.muzhik-v-ochkah.ru"
+          },
+          "wsSettings": {
+            "headers": {},
+            "host": "",
+            "path": "/radical-reserve-v1"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "dns",
+        "tag": "dns-out"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "Radical | 🇷🇺 🎮 ИГРОВОЙ DNS",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "domain": [
+            "geosite:category-porn",
+            "domain:instagram.com",
+            "domain:cdninstagram.com",
+            "domain:discord.com",
+            "domain:discord.gg",
+            "domain:discordapp.com",
+            "domain:discordapp.net",
+            "domain:discord.media",
+            "domain:discordcdn.com",
+            "domain:fbcdn.net"
+          ],
+          "outboundTag": "block",
+          "type": "field"
+        },
+        {
+          "network": "tcp,udp",
+          "outboundTag": "dns-out",
+          "port": "53",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "full:game.brawlstarsgame.com"
+          ],
+          "network": "tcp",
+          "outboundTag": "proxy",
+          "port": "443,9339",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "44.227.138.182",
+            "44.241.61.155",
+            "52.33.95.61"
+          ],
+          "network": "tcp",
+          "outboundTag": "proxy",
+          "port": "443,9339",
+          "type": "field"
+        },
+        {
+          "network": "tcp,udp",
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
   }
 ]
