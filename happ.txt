@@ -866,12 +866,20 @@
       {
         "protocol": "vless",
         "settings": {
-          "address": "45.139.26.243",
-          "encryption": "none",
-          "flow": "xtls-rprx-vision",
-          "id": "d1fe9b56-32c8-4361-bf56-be590b505840",
-          "level": 8,
-          "port": 443
+          "vnext": [
+            {
+              "address": "45.139.26.243",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d1fe9b56-32c8-4361-bf56-be590b505840",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "level": 8
+                }
+              ]
+            }
+          ]
         },
         "streamSettings": {
           "isCustomFinalmask": false,
